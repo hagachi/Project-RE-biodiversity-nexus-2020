@@ -1,0 +1,480 @@
+﻿LandisData  "Biomass Harvest"
+
+Timestep    1
+
+ManagementAreas	replacehere
+Stands			"../../input/bekambe_bestmix_stdMap.tif"
+
+>> *****************************************************************************
+>> PRESCRIPTIONS
+
+>> 1.1.1.1n ClearCutting normal conifer ClearCutting national (ID=1)
+Prescription clear_normal_conifer_national
+	StandRanking	MaxCohortAge
+	MinimumAge		30
+	SiteSelection PartialStandSpread	1	20
+	CohortsRemoved ClearCut
+	Plant larikaem
+
+>> 1.1.1.1p ClearCutting normal conifer ClearCutting pref (ID=2)
+Prescription clear_normal_conifer_pref
+	StandRanking	MaxCohortAge
+	MinimumAge		50
+	SiteSelection PartialStandSpread	1	20
+	CohortsRemoved ClearCut
+	Plant  abiesach
+
+>> 1.1.1.2 ClearCutting normal conifer Thinning  (ID=3)
+Prescription  thinning_conifer
+	StandRanking  MaxCohortAge
+	MinimumTimeSinceLastHarvest 5
+	ForestTypeTable
+		Optional 17-21 highest larikaem
+		Optional 24-28 highest larikaem
+		Optional 32-36 highest larikaem
+		Optional 40-44 highest larikaem
+		Optional 22-26 highest abiesach
+		Optional 30-34 highest abiesach
+		Optional 38-42 highest abiesach
+		Optional 48-52 highest abiesach
+	SiteSelection Complete
+	MinTimeSinceDamage 5
+	CohortsRemoved	SpeciesList
+		>>Species 	Selection
+		>>-------	--------
+		betuplat	All
+		quercris	All
+		larikaem	17-21(26.5%) 24-28(26.5%) 32-36(26.5%) 40-44(26.5%)
+		alnujapo	All
+		fraxmand	All
+		abiesach	22-26(26.5%) 30-34(26.5%) 38-42(26.5%) 48-52(26.5%)
+		ulmudavi	All
+		pastgras	All
+		sasagras	All
+
+
+>> 1.1.2.1 ClearCutting normal broadleaf ClearCutting (ID=4)
+Prescription clear_normal_broad
+	StandRanking	MaxCohortAge
+	MinimumAge		40
+	SiteSelection PartialStandSpread	1	20
+	CohortsRemoved ClearCut
+	Plant quercris
+
+
+>> 1.1.2.2 ClearCutting normal broadleaf Thinning  (ID=5)
+Prescription  thinning_broad
+	StandRanking  MaxCohortAge
+	MinimumTimeSinceLastHarvest 5
+	ForestTypeTable
+		Optional 26-30 highest quercris betuplat alnujapo fraxmand ulmudavi
+		Optional 41-45 highest quercris betuplat alnujapo fraxmand ulmudavi
+	SiteSelection Complete
+	MinTimeSinceDamage 5
+	CohortsRemoved	SpeciesList
+		>>Species 	Selection
+		>>-------	--------
+		betuplat	26-30(26.5%) 41-45(26.5%)
+		quercris	26-30(26.5%) 41-45(26.5%)
+		larikaem	All
+		alnujapo	26-30(26.5%) 41-45(26.5%)
+		fraxmand	26-30(26.5%) 41-45(26.5%)
+		abiesach	All
+		ulmudavi	26-30(26.5%) 41-45(26.5%)
+		pastgras	All
+		sasagras	All
+
+
+
+>> 1.2.1.1n ClearCutting long conifer ClearCutting national (ID=6)
+Prescription clear_long_conifer_national
+	StandRanking	MaxCohortAge
+	MinimumAge		60
+	SiteSelection PartialStandSpread	1	20
+	CohortsRemoved ClearCut
+	Plant larikaem
+
+>> 1.2.1.1p ClearCutting long conifer ClearCutting pref (ID=7)
+Prescription clear_long_conifer_pref
+	StandRanking	MaxCohortAge
+	MinimumAge		100
+	SiteSelection PartialStandSpread	1	20
+	CohortsRemoved ClearCut
+	Plant  abiesach
+
+>> 1.2.2.1 ClearCutting long broadleaf ClearCutting (ID=8)
+Prescription clear_long_broad
+	StandRanking	MaxCohortAge
+	MinimumAge		80
+	SiteSelection PartialStandSpread	1	20
+	CohortsRemoved ClearCut
+	Plant quercris
+
+>> 2.1.1.1n SelectiveCutting normal conifer national (ID=9)
+Prescription selective_normal_conifer_national
+	StandRanking	MaxCohortAge
+	MinimumAge		30
+	MinimumTimeSinceLastHarvest 15
+	SiteSelection Complete
+	CohortsRemoved	SpeciesList
+		larikaem	1-29(70%) 30-250(50%)
+		abiesach	1-49(70%) 50-250(50%)
+		betuplat	1-39(70%) 40-250(50%)
+		quercris	1-39(70%) 40-250(50%)
+		alnujapo	1-39(70%) 40-250(50%)
+		fraxmand	1-39(70%) 40-250(50%)
+		ulmudavi	1-39(70%) 40-250(50%)
+		pastgras	All
+		sasagras	All
+	Plant larikaem
+
+>> 2.1.1.1p SelectiveCutting normal conifer pref (ID=10)
+Prescription selective_normal_conifer_pref
+	StandRanking	MaxCohortAge
+	MinimumAge		50
+	MinimumTimeSinceLastHarvest 15
+	SiteSelection Complete
+	CohortsRemoved	SpeciesList
+		larikaem	1-29(70%) 30-250(50%)
+		abiesach	1-49(70%) 50-250(50%)
+		betuplat	1-39(70%) 40-250(50%)
+		quercris	1-39(70%) 40-250(50%)
+		alnujapo	1-39(70%) 40-250(50%)
+		fraxmand	1-39(70%) 40-250(50%)
+		ulmudavi	1-39(70%) 40-250(50%)
+		pastgras	All
+		sasagras	All
+	Plant abiesach
+
+
+>> 2.1.2.1 SelectiveCutting normal broadleaf (ID=11)
+Prescription selective_normal_broad
+	StandRanking	MaxCohortAge
+	MinimumAge		40
+	MinimumTimeSinceLastHarvest 15
+	SiteSelection Complete
+	CohortsRemoved 	SpeciesList
+		larikaem	1-29(70%) 30-250(50%)
+		abiesach	1-49(70%) 50-250(50%)
+		betuplat	1-39(70%) 40-250(50%)
+		quercris	1-39(70%) 40-250(50%)
+		alnujapo	1-39(70%) 40-250(50%)
+		fraxmand	1-39(70%) 40-250(50%)
+		ulmudavi	1-39(70%) 40-250(50%)
+		pastgras	All
+		sasagras	All
+	Plant quercris
+
+>> 2.2.1.1n SelectiveCutting long conifer national (ID=12)
+Prescription selective_long_conifer_national
+	StandRanking	MaxCohortAge
+	MinimumAge		60
+	MinimumTimeSinceLastHarvest 15
+	SiteSelection Complete
+	CohortsRemoved	SpeciesList
+		larikaem	1-29(40%) 30-250(30%)
+		abiesach	1-49(40%) 50-250(30%)
+		betuplat	1-39(40%) 40-250(30%)
+		quercris	1-39(40%) 40-250(30%)
+		alnujapo	1-39(40%) 40-250(30%)
+		fraxmand	1-39(40%) 40-250(30%)
+		ulmudavi	1-39(40%) 40-250(30%)
+		pastgras	All
+		sasagras	All
+	Plant larikaem
+
+>> 2.2.1.1p SelectiveCutting long conifer pref (ID=13)
+Prescription selective_long_conifer_pref
+	StandRanking	MaxCohortAge
+	MinimumAge		100
+	MinimumTimeSinceLastHarvest 15
+	SiteSelection Complete
+	CohortsRemoved	SpeciesList
+		larikaem	1-29(40%) 30-250(30%)
+		abiesach	1-49(40%) 50-250(30%)
+		betuplat	1-39(40%) 40-250(30%)
+		quercris	1-39(40%) 40-250(30%)
+		alnujapo	1-39(40%) 40-250(30%)
+		fraxmand	1-39(40%) 40-250(30%)
+		ulmudavi	1-39(40%) 40-250(30%)
+		pastgras	All
+		sasagras	All
+	Plant abiesach
+
+
+>> 2.2.2.1 SelectiveCutting long broadleaf (ID=14)
+Prescription selective_long_broad
+	StandRanking	MaxCohortAge
+	MinimumAge		80
+	MinimumTimeSinceLastHarvest 15
+	SiteSelection Complete
+	CohortsRemoved	SpeciesList
+		larikaem	1-29(40%) 30-250(30%)
+		abiesach	1-49(40%) 50-250(30%)
+		betuplat	1-39(40%) 40-250(30%)
+		quercris	1-39(40%) 40-250(30%)
+		alnujapo	1-39(40%) 40-250(30%)
+		fraxmand	1-39(40%) 40-250(30%)
+		ulmudavi	1-39(40%) 40-250(30%)
+		pastgras	All
+		sasagras	All
+	Plant quercris
+
+>> 3 k_multi (ID=15)
+Prescription k_multi
+	StandRanking	MaxCohortAge
+	MinimumAge		30
+	MinimumTimeSinceLastHarvest 15
+	SiteSelection Complete
+	CohortsRemoved	SpeciesList
+		larikaem	1-29(70%) 30-250(50%)
+		abiesach	1-49(70%) 50-250(50%)
+		betuplat	1-39(70%) 40-250(50%)
+		quercris	1-39(70%) 40-250(50%)
+		alnujapo	1-39(70%) 40-250(50%)
+		fraxmand	1-39(70%) 40-250(50%)
+		ulmudavi	1-39(70%) 40-250(50%)
+		pastgras	All
+		sasagras	All
+	Plant larikaem
+
+
+>> 8 c_multi_todo (ID=16)
+Prescription c_multi_todo
+	StandRanking	MaxCohortAge
+	MinimumAge		50
+	MinimumTimeSinceLastHarvest 15
+	SiteSelection Complete
+	CohortsRemoved	SpeciesList
+		larikaem	1-29(70%) 30-250(50%)
+		abiesach	1-49(70%) 50-250(50%)
+		betuplat	1-39(70%) 40-250(50%)
+		quercris	1-39(70%) 40-250(50%)
+		alnujapo	1-39(70%) 40-250(50%)
+		fraxmand	1-39(70%) 40-250(50%)
+		ulmudavi	1-39(70%) 40-250(50%)
+		pastgras	All
+		sasagras	All
+	Plant abiesach
+
+
+>> 9 c_single_sel10 (ID=17)
+Prescription c_single_sel10
+	StandRanking	MaxCohortAge
+	MinimumAge		60
+	MinimumTimeSinceLastHarvest 15
+	SiteSelection Complete
+	CohortsRemoved	SpeciesList
+		larikaem	1-250(70%)
+		abiesach	1-250(70%)
+		betuplat	1-250(70%)
+		quercris	1-250(70%)
+		alnujapo	1-250(70%)
+		fraxmand	1-250(70%)
+		ulmudavi	1-250(70%)
+		pastgras	All
+		sasagras	All
+	Plant abiesach
+
+>> 13 c_multi_nat (ID=18)
+Prescription c_multi_nat
+	StandRanking	MaxCohortAge
+	MinimumAge		50
+	MinimumTimeSinceLastHarvest 15
+	SiteSelection Complete
+	CohortsRemoved	SpeciesList
+		larikaem	1-29(70%) 30-250(50%)
+		abiesach	1-49(70%) 50-250(50%)
+		betuplat	1-39(70%) 40-250(50%)
+		quercris	1-39(70%) 40-250(50%)
+		alnujapo	1-39(70%) 40-250(50%)
+		fraxmand	1-39(70%) 40-250(50%)
+		ulmudavi	1-39(70%) 40-250(50%)
+		pastgras	All
+		sasagras	All
+	Plant quercris
+
+
+>> 14 c_single_sel (ID=19)
+Prescription c_single_sel
+	StandRanking	MaxCohortAge
+	MinimumAge		60
+	MinimumTimeSinceLastHarvest 15
+	SiteSelection Complete
+	CohortsRemoved	SpeciesList
+		larikaem	1-250(70%)
+		abiesach	1-250(70%)
+		betuplat	1-250(70%)
+		quercris	1-250(70%)
+		alnujapo	1-250(70%)
+		fraxmand	1-250(70%)
+		ulmudavi	1-250(70%)
+		pastgras	All
+		sasagras	All
+	Plant quercris
+
+>> 15 p_art_multi_str_abies (ID=20)
+Prescription p_art_multi_str_abies
+	StandRanking	MaxCohortAge
+	MinimumAge		50
+	MinimumTimeSinceLastHarvest 15
+	SiteSelection Complete
+	CohortsRemoved	SpeciesList
+		larikaem	1-29(70%) 30-250(50%)
+		abiesach	1-49(70%) 50-250(50%)
+		betuplat	1-39(70%) 40-250(50%)
+		quercris	1-39(70%) 40-250(50%)
+		alnujapo	1-39(70%) 40-250(50%)
+		fraxmand	1-39(70%) 40-250(50%)
+		ulmudavi	1-39(70%) 40-250(50%)
+		pastgras	All
+		sasagras	All
+	Plant abiesach
+
+
+>> 16 p_art_multi_wea_abies (ID=21)
+Prescription p_art_multi_wea_abies
+	StandRanking	MaxCohortAge
+	MinimumAge		50
+	MinimumTimeSinceLastHarvest 15
+	SiteSelection Complete
+	CohortsRemoved	SpeciesList
+		larikaem	1-29(40%) 30-250(30%)
+		abiesach	1-49(40%) 50-250(30%)
+		betuplat	1-39(40%) 40-250(30%)
+		quercris	1-39(40%) 40-250(30%)
+		alnujapo	1-39(40%) 40-250(30%)
+		fraxmand	1-39(40%) 40-250(30%)
+		ulmudavi	1-39(40%) 40-250(30%)
+		pastgras	All
+		sasagras	All
+	Plant abiesach
+
+
+>> 17 p_ntr_multi_str_quer (ID=22)
+Prescription p_ntr_multi_str_quer
+	StandRanking	MaxCohortAge
+	MinimumAge		50
+	MinimumTimeSinceLastHarvest 15
+	SiteSelection Complete
+	CohortsRemoved	SpeciesList
+		larikaem	1-29(70%) 30-250(50%)
+		abiesach	1-49(70%) 50-250(50%)
+		betuplat	1-39(70%) 40-250(50%)
+		quercris	1-39(70%) 40-250(50%)
+		alnujapo	1-39(70%) 40-250(50%)
+		fraxmand	1-39(70%) 40-250(50%)
+		ulmudavi	1-39(70%) 40-250(50%)
+		pastgras	All
+		sasagras	All
+	Plant quercris
+
+
+>> 18 p_ntr_multi_wea_quer (ID=23)
+Prescription p_ntr_multi_wea_quer
+	StandRanking	MaxCohortAge
+	MinimumAge		50
+	MinimumTimeSinceLastHarvest 15
+	SiteSelection Complete
+	CohortsRemoved	SpeciesList
+		larikaem	1-29(40%) 30-250(30%)
+		abiesach	1-49(40%) 50-250(30%)
+		betuplat	1-39(40%) 40-250(30%)
+		quercris	1-39(40%) 40-250(30%)
+		alnujapo	1-39(40%) 40-250(30%)
+		fraxmand	1-39(40%) 40-250(30%)
+		ulmudavi	1-39(40%) 40-250(30%)
+		pastgras	All
+		sasagras	All
+	Plant quercris
+
+>> Agriculture (ID=24)
+Prescription Agriculture
+	StandRanking	Random
+	SiteSelection	Complete
+	CohortsRemoved	SpeciesList
+		betuplat	All
+		quercris	All
+		larikaem	All
+		alnujapo	All
+		fraxmand	All
+		abiesach	All
+		ulmudavi	All
+		pastgras	1-5(98%)
+		sasagras	All
+
+>> Built solar power equipment after pastureland abandonment (ID = 25)
+Prescription stop_and_solar
+	StandRanking	Random
+	SiteSelection	Complete
+	CohortsRemoved	SpeciesList
+		betuplat	All
+		quercris	All
+		larikaem	All
+		alnujapo	All
+		fraxmand	All
+		abiesach	All
+		ulmudavi	All
+		pastgras	All
+		sasagras	All
+
+
+>> Cut betuplat (ID = 26)
+Prescription betula_ClearCutting_abandoned
+	StandRanking	MaxCohortAge
+	ForestTypeTable 
+		>> InclusionRule ageRange percentCells species
+		Required 25-250 highest betuplat
+	SiteSelection	Complete
+	CohortsRemoved ClearCut
+
+>> 1.1.1.1p ClearCutting normal+10 conifer ClearCutting pref (ID=27)
+Prescription clear_normal10_conifer_pref
+	StandRanking	MaxCohortAge
+	MinimumAge		60
+	SiteSelection PartialStandSpread	1	20
+	CohortsRemoved ClearCut
+	Plant  abiesach
+
+>> 1.1.2.1 ClearCutting normal+10 broadleaf ClearCutting (ID=28)
+Prescription clear_normal10_broad
+	StandRanking	MaxCohortAge
+	MinimumAge		50
+	SiteSelection PartialStandSpread	1	20
+	CohortsRemoved ClearCut
+	Plant quercris
+
+>> *****************************************************************************
+HarvestImplementations
+>>  Mgmt Area   Prescription					Harvest Area    Begin Time  End Time
+>>  ---------   ------------					------------    ----------  --------
+1	clear_normal_conifer_national 3.3% 1 85
+1	thinning_conifer 13.2% 1 85
+2	k_multi	6.7%	1	85
+3	k_multi	6.7%	1	85
+4	clear_long_conifer_national 1.7% 1 85
+4	thinning_conifer 6.8% 1 85
+5	clear_normal_conifer_pref 2.0% 1 85
+5	thinning_conifer 8.0% 1 85
+6	clear_normal10_conifer_pref 1.7% 1 85
+6	thinning_conifer 6.8% 1 85
+7	clear_long_conifer_pref	1.0%	1	85
+7	thinning_conifer 4.0% 1 85
+8	c_multi_todo 6.7% 185
+9	c_single_sel10 6.7% 1 85
+10	clear_normal_broad 2.5% 1 85
+10	thinning_broad	10% 1 85
+11	clear_normal10_broad 2.0% 1 85
+11	thinning_broad	8.0% 1 85
+12	clear_long_broad 1.3% 1 85
+12	thinning_broad	5.2% 1 85
+13	c_multi_nat	6.7%	1	85
+14	c_single_sel	6.7%	1	85
+15	p_art_multi_str_abies	6.7%	1	85
+16	p_art_multi_wea_abies	6.7%	1	85
+17	p_ntr_multi_str_quer	6.7%	1	85
+19	p_ntr_multi_str_quer	6.7%	1	85
+18	p_ntr_multi_wea_quer	6.7%	1	85
+20	p_ntr_multi_wea_quer	6.7%	1	85
+21  clear_long_conifer_pref 1.0% 1 85
+21	thinning_broad	4.0% 1 85

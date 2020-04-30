@@ -1,0 +1,12 @@
+.Rproj.user
+.Rhistory
+.RData
+.Ruserdata
+
+# scenario files.
+a*_s*/
+
+# analysis outputs
+Analysis/**/*.csv
+Analysis/**/*.tif
+Analysis/**/*.png

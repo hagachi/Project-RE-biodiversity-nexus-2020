@@ -1,0 +1,28 @@
+LandisData  Scenario
+
+Duration                    85
+Species                     ../../input/species_bekambe.txt
+Ecoregions                  ./ecoregions_bekambe.txt
+EcoregionsMap replace here
+CellLength                  100     << meters, 100 x 100 m = 1 ha
+
+
+>> Succession Extension     Initialization File
+>> --------------------     -------------------
+"NECN Succession"           ./NECN-succession_bekambe.txt
+
+
+>> Disturbance Extensions   Initialization File
+>> ----------------------   -------------------
+"Biomass Harvest"           ./BiomassHarvest.txt
+
+DisturbancesRandomOrder     yes      << optional parameter; default = no
+
+
+>> Other Extensions         Initialization File
+>> ----------------         ------------------
+"Output Biomass"            ../../ini/output-biomass.txt
+"Output Cohort Statistics"  ../../ini/output-CohortStats.txt
+
+RandomNumberSeed            4,357
+>> optional parameter; default = the seed is randomly generated using the current time
